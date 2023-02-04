@@ -1,0 +1,48 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "react-app",
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended", 
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "requireConfigFile": false
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint", 
+    "prettier"
+  ],
+  "rules": {
+    "linebreak-style": 0,
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "prettier/prettier": "warn",
+    "@typescript-eslint/no-var-requires": "error",
+    "semi": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "arrow-parens": "off",
+    "no-console": "warn",
+    "import/prefer-default-export": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "no-underscore-dangle": "warn",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "react/react-in-jsx-scope": "off"
+  }
+}
