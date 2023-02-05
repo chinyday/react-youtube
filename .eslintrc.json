@@ -43,6 +43,7 @@
     "no-underscore-dangle": "warn",
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": "warn",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   }
 }
