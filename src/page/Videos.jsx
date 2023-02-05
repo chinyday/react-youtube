@@ -1,8 +1,9 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import VideoCard from '../conponents/VideoCard';
+import { Search } from '../api/youtube';
+import FakeYoutube from '../api/FakeYoutube';
 
 export default function Vidoe() {
   const { keyword } = useParams();
@@ -11,8 +12,9 @@ export default function Vidoe() {
     isLoading,
     error,
     data: videos,
-  } = useQuery(['videos', keyword], async () => {
-    return axios.get(`videos/${keyword ? 'search' : 'popular'}.json`).then(res => res.data.items);
+  } = useQuery(['videos', keyword], () => {
+    const youtube = new FakeYoutube();
+    return youtube.Search(keyword);
   });
   return (
     <>
