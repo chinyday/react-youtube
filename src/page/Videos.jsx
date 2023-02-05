@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import VideoCard from '../conponents/VideoCard';
-import { Search } from '../api/youtube';
+import Youtube from '../api/Youtube';
 import FakeYoutube from '../api/FakeYoutube';
 
 export default function Vidoe() {
@@ -13,7 +13,8 @@ export default function Vidoe() {
     error,
     data: videos,
   } = useQuery(['videos', keyword], () => {
-    const youtube = new FakeYoutube();
+    // const youtube = new FakeYoutube();
+    const youtube = new Youtube();
     return youtube.Search(keyword);
   });
   return (
