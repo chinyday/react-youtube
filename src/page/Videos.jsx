@@ -13,8 +13,8 @@ export default function Vidoe() {
     error,
     data: videos,
   } = useQuery(['videos', keyword], () => {
-    // const youtube = new FakeYoutube();
-    const youtube = new Youtube();
+    const youtube = new FakeYoutube();
+    // const youtube = new Youtube();
     return youtube.Search(keyword);
   });
   return (
@@ -23,11 +23,11 @@ export default function Vidoe() {
       {isLoading && <div>isLoading</div>}
       {error && <div>error!</div>}
       {videos && (
-        <div>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {videos.map(item => (
             <VideoCard key={item.id} video={item} />
           ))}
-        </div>
+        </ul>
       )}
     </>
   );
